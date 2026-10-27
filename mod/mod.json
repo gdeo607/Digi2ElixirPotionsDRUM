@@ -1,0 +1,204 @@
+{
+ "id": "elixir",
+ "version": "0.2.0",
+ "license": "GPL-3.0-only",
+ "title": "Elixir",
+ "description": "ELIXIR, a drum-synthesis machine for the Digitakt II: four voice models after the open-source firmware of the Sonic Potions LXR drum machine (GPL-3.0) in one machine: MODEL picks DRUM (carrier, FM modulator, pitch sweep), SNARE (carrier plus band-passed sample-and-hold noise), CYMBAL (carrier FM'd by two square modulators) or HIHAT (the same, thinner and high-passed); every model has the LXR's pitch sweep and transients (snap, two click samples, noise). Two SRC pages; the Digitakt's FILTER, AMP, LFO and overdrive do the rest. A machine mod on core-dt2 2.4: machine type 12 (replaces DrumVoice), parameters 280-290, and its DSP voice routine. Experimental.",
+ "category": "Sound",
+ "author": "elekloader port; voices after the LXR drum machine firmware (Erica Synths, GPL-3.0); DSP entry after DigiKit's (Em D)",
+ "device": "digitakt-mk2",
+ "os": "1.17",
+ "sources": [
+  "machine.s",
+  "fmt.c"
+ ],
+ "machines": [
+  {
+   "id": 12,
+   "descriptor": "lxr_machine"
+  }
+ ],
+ "contribute": [
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_model",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_wave",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_clvl",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_sweep",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_sdec",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_mod",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_freq",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_click",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_mod2",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_frq2",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_params",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lxr_p_cpit",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_knobs",
+   "order": 50,
+   "data": "000001180000011800000000",
+   "relocs": [
+    [
+     8,
+     "abs32",
+     "sym:lxr_knob",
+     0
+    ]
+   ]
+  }
+ ],
+ "sites": [],
+ "sharc_raw": "sharc_raw.json",
+ "requires": [
+  "core"
+ ],
+ "conflicts": [
+  "drumvoice",
+  "lxr"
+ ],
+ "resources": {
+  "core": "2.4",
+  "names": [
+   "param:280",
+   "param:281",
+   "param:282",
+   "param:283",
+   "param:284",
+   "param:285",
+   "param:286",
+   "param:287",
+   "param:288",
+   "param:289",
+   "param:290"
+  ]
+ }
+}

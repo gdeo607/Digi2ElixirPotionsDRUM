@@ -1,0 +1,38 @@
+{
+ "objects": [
+  {
+   "dko": "lxr-dsp.dko.json",
+   "name": "lxr"
+  }
+ ],
+ "contribute": [
+  {
+   "to": "core_dsp_voices",
+   "parts": [
+    [
+     "hex",
+     "0c00000000000000"
+    ]
+   ],
+   "relocs": [
+    [
+     4,
+     "le32",
+     "sym:_lm_render",
+     0
+    ]
+   ]
+  },
+  {
+   "to": "core_mf_selector",
+   "index": 12,
+   "parts": [
+    [
+     "stock",
+     "0x282567d8",
+     4
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+[module]
+id = "machines/lxr"
+version = "0.1.0"
+name = "LXR"
+category = "machines"
+status = "experimental"
+summary = "The four voice models of the LXR drum machine (GPL-3.0) in one machine: drum, snare, cymbal, hihat; 48 kHz into the voice output."
+ports = ["dt2-1.17"]
+requires = ["core/dsp-inline"]
+
+[targets]
+"dt2-1.17" = "experimental"
+
+[[object]]
+path = "build/lxr-dsp.dko.json"
+sources = [
+  "src/dsp/lxm_entry.s",
+  "src/dsp/lxr.c",
+  "src/dsp/lxm_tables.c",
+]
+place = "dsp.l2"
+devices = ["dt2"]
+
+[[entry]]
+registry = "inline_voices"
+id = "lxr"
+type = "machines.lxr.index"
+pc = "_lm_render"
+devices = ["dt2"]
