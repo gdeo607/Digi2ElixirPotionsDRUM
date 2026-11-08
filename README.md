@@ -21,7 +21,7 @@ Parameters, per model: [docs/PARAMETERS.md](docs/PARAMETERS.md).
 | | |
 |---|---|
 | Unit | Digitakt II, OS 1.17 |
-| Mods | **core-dt2 2.4** (see Digi2Core) and this mod, `elemods/elixir-0.2.0.elemod` |
+| Mods | **core-dt2 2.4** ([Digi2Core](https://github.com/gdeo607/Digi2Core), `elemods/core-2.4.elemod`) and this mod, `elemods/elixir-0.2.0.elemod` |
 | elekloader | a build with `sharc_raw` support for the Digitakt II (DSP objects in mods) |
 | Not with | DrumVoice or older LXR test builds: ELIXIR takes machine type 12 |
 
